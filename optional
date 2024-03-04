@@ -1,0 +1,6 @@
+<div class="card lg:card-side bg-[#7A7DFC1A] mb-10 shadow-xl border border-[#7A7DFC] w-[700px] h-[300px] mt-10 ml-20  ">
+     <div class="avatar online">
+     <div class="w-16 h-16 rounded-xl mt-10 ml-10">
+      <img src="${item.image}" />
+    </div>
+     </div>
