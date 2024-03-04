@@ -4,19 +4,25 @@ const loadNews = async (catid) => {
   const newsContainer = document.getElementById('news-container')
   newsContainer.innerHTML = ""
   data.posts.forEach((item) => {
-    
-    const div = document.createElement('div')
+let status = '';
+if (item.isActive){
+status = `<div id="indicator" class ="bg-green-500 absolute ml-20 mt-7 top-2 left-2.5 w-2.5 h-2.5 rounded-full z-[1]"></div>`
+}
+else{
+  status = `<div id="indicator" class ="bg-red-500 absolute ml-20 mt-7 top-2 left-2.5 w-2.5 h-2.5 rounded-full z-[1]"></div>`
+}
+ const div = document.createElement('div')
     div.innerHTML = `
         <div class="card lg:card-side bg-[#7A7DFC1A] mb-10 shadow-xl border border-[#7A7DFC] w-96 lg:w-[700px] h-[300px] mt-10 ml-20  ">
         <div class="avatar">
      <div class="w-16 h-16 rounded-xl  ml-10 mt-10 ">
-      <img  src="${item.image}"> />
-      
+      <img  src="${item.image}" />
+      ${status}
     </div>
      </div>
                     <div class="card-body space-y-2">
                         <div class="flex">
-                            <p>${item.category}</p>
+                            <p>#${item.category}</p>
                             <p>Author :<span>${item.author.name}</span></p>
                         </div>
                       <p class="card-title">${item.title}</p>
@@ -45,7 +51,7 @@ const loadNews = async (catid) => {
     `
     newsContainer.appendChild(div)
   })
-  
+
 
 }
 const handleSearch = () => {
@@ -104,20 +110,26 @@ const loadLatest = async () => {
 }
 // button
 const allBtn = document.getElementsByClassName('add-btn')
-console.log(allBtn)
+
+
+// append
+
+
+// INDICATOR
+
 
 
 // spinner
-const loadingSpinner = (isLoading) =>{
+const loadingSpinner = (isLoading) => {
   const loadingSpinner = document.getElementById('loading-spin')
- 
-    if(isLoading){
-      loadingSpinner.classList.remove('hidden')
-    }
-    else{
-      loadingSpinner.classList.add('hidden')
-    }
-    
+
+  if (isLoading) {
+    loadingSpinner.classList.remove('hidden')
+  }
+  else {
+    loadingSpinner.classList.add('hidden')
+  }
+
 }
 
 
