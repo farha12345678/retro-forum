@@ -7,7 +7,7 @@ const loadNews = async (catid) => {
     
     const div = document.createElement('div')
     div.innerHTML = `
-        <div class="card lg:card-side bg-[#7A7DFC1A] mb-10 shadow-xl border border-[#7A7DFC] w-[700px] h-[300px] mt-10 ml-20  ">
+        <div class="card lg:card-side bg-[#7A7DFC1A] mb-10 shadow-xl border border-[#7A7DFC] w-96 lg:w-[700px] h-[300px] mt-10 ml-20  ">
         <div class="avatar">
      <div class="w-16 h-16 rounded-xl  ml-10 mt-10 ">
       <img  src="${item.image}"> />
