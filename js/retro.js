@@ -112,10 +112,10 @@ const loadLatest = async () => {
 const allBtn = document.getElementsByClassName('add-btn')
 
 
-// append
 
 
-// INDICATOR
+
+
 
 
 
